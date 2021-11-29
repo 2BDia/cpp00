@@ -6,11 +6,12 @@
 #    By: rvan-aud <rvan-aud@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 14:50:17 by rvan-aud          #+#    #+#              #
-#    Updated: 2021/11/29 10:20:37 by rvan-aud         ###   ########.fr        #
+#    Updated: 2021/11/29 16:30:54 by rvan-aud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp		\
+			commands.cpp	\
 			contacts.cpp	\
 			phonebook.cpp	\
 

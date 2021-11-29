@@ -6,7 +6,7 @@
 /*   By: rvan-aud <rvan-aud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 14:58:22 by rvan-aud          #+#    #+#             */
-/*   Updated: 2021/11/29 11:11:22 by rvan-aud         ###   ########.fr       */
+/*   Updated: 2021/11/29 16:33:00 by rvan-aud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,20 +23,11 @@ int	main(void)
 		std::cout << "> ";
 		std::getline(std::cin, input);
 		if (input == "ADD")
-		{
-			// std::cout << "add" << std::endl;
 			phonebook.add(&phonebook);
-		}
 		else if (input == "SEARCH")
-		{
-			std::cout << "search" << std::endl;
 			phonebook.search(&phonebook);
-		}
 		else if (input == "EXIT" || input == "")
-		{
-			std::cout << "exit" << std::endl;
 			break ;
-		}
 	}
 	return (0);
 }
