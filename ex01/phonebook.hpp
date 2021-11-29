@@ -6,7 +6,7 @@
 /*   By: rvan-aud <rvan-aud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 14:52:36 by rvan-aud          #+#    #+#             */
-/*   Updated: 2021/11/29 11:32:16 by rvan-aud         ###   ########.fr       */
+/*   Updated: 2021/11/29 14:45:35 by rvan-aud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHONEBOOK_HPP
 
 # include <iostream>
+# include <iomanip>
 # include <string>
 
 class	Contacts
@@ -50,9 +51,11 @@ class	Phonebook
 		Phonebook(void);
 		~Phonebook(void);
 
-		void	add(Phonebook *phonebook);
-		void	search(Phonebook *phonebook);
-		void	get_all(Contacts *contact);
+		void		add(Phonebook *phonebook);
+		void		search(Phonebook *phonebook);
+		void		get_all(Contacts *contact);
+		int			get_index(Phonebook *phonebook);
+		Contacts	get_contact(Phonebook *phonebook, int i);
 	
 	private:
 	
