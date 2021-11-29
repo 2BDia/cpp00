@@ -6,20 +6,21 @@
 #    By: rvan-aud <rvan-aud@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/26 14:50:17 by rvan-aud          #+#    #+#              #
-#    Updated: 2021/11/26 15:01:10 by rvan-aud         ###   ########.fr        #
+#    Updated: 2021/11/29 10:20:37 by rvan-aud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	=	main.cpp		\
+			contacts.cpp	\
 			phonebook.cpp	\
 
 NAME	= phonebook
 
-CC		= g++
+CC		= clang++
 
 RM		= rm -f
 
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 OBJS	= $(SRCS:.cpp=.o)
 

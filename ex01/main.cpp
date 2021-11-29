@@ -6,53 +6,33 @@
 /*   By: rvan-aud <rvan-aud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/26 14:58:22 by rvan-aud          #+#    #+#             */
-/*   Updated: 2021/11/29 09:50:39 by rvan-aud         ###   ########.fr       */
+/*   Updated: 2021/11/29 11:11:22 by rvan-aud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
-{
-	size_t			i;
-	unsigned char	*s1cpy;
-	unsigned char	*s2cpy;
-
-	s1cpy = (unsigned char *)s1;
-	s2cpy = (unsigned char *)s2;
-	i = 0;
-	if (n == 0)
-		return (0);
-	while (i < n - 1 && s1cpy[i] == s2cpy[i] && s1cpy[i] && s2cpy[i])
-		i++;
-	if (s1cpy[i] != s2cpy[i])
-		return (s1cpy[i] - s2cpy[i]);
-	else
-		return (0);
-}
-
 int	main(void)
 {
-	Phonebook	instance;
-	int			i;
+	Phonebook	phonebook;
 	std::string	input;
-	const char	*buff;
 
-	i = 0;
+	std::cout << "Enter your command : " << std::endl;
 	while (1)
 	{
-		std::cout << "Enter your command : ";
-		std::cin >> input;
-		buff = input.c_str();
-		if (!ft_strncmp("ADD", buff, input.length()))
+		std::cout << "> ";
+		std::getline(std::cin, input);
+		if (input == "ADD")
 		{
-			std::cout << "add" << std::endl;
+			// std::cout << "add" << std::endl;
+			phonebook.add(&phonebook);
 		}
-		if (!ft_strncmp("SEARCH", buff, input.length()))
+		else if (input == "SEARCH")
 		{
 			std::cout << "search" << std::endl;
+			phonebook.search(&phonebook);
 		}
-		if (!ft_strncmp("EXIT", buff, input.length()))
+		else if (input == "EXIT" || input == "")
 		{
 			std::cout << "exit" << std::endl;
 			break ;
