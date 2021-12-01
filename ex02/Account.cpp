@@ -6,7 +6,7 @@
 /*   By: rvan-aud <rvan-aud@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 11:21:35 by rvan-aud          #+#    #+#             */
-/*   Updated: 2021/12/01 15:31:54 by rvan-aud         ###   ########.fr       */
+/*   Updated: 2021/12/01 16:53:19 by rvan-aud         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,15 @@ int	Account::_totalNbWithdrawals = 0;
 
 Account::Account(int initial_deposit)
 {
-	this->_accountIndex = getNbAccounts(void);
+	this->_accountIndex = getNbAccounts();
 	Account::_nbAccounts++;
+	Account::_totalAmount += initial_deposit;
 	std::cout << "index:" << this->_accountIndex << ";amount:" << initial_deposit << ";created" << std::endl;
-	return ;
 }
 
 Account::~Account(void)
 {
 	std::cout << "Destructor called" << std::endl;
-	return ;
 }
 
 int	Account::getNbAccounts(void)
@@ -54,11 +53,11 @@ int	Account::getNbWithdrawals(void)
 
 void	Account::displayAccountsInfos(void)
 {
-	std::cout << "NbAccounts =" << getNbAccounts() << std::endl;
-	std::cout << "TotalAmount =" << getTotalAmount() << std::endl;
-	std::cout << "NbDeposits =" << getNbDeposits() << std::endl;
-	std::cout << "NbWithdrawals =" << getNbWithdrawals() << std::endl;
-	return ;
+	std::cout << "accounts:" << Account::_nbAccounts
+		<< ";total:" << Account::_totalAmount
+		<< ";deposits:" << Account::_totalNbDeposits
+		<< ";withdrawals:" << Account::_totalNbWithdrawals
+		<< std::endl;
 }
 
 // void	Account::makeDeposit(int deposit)
